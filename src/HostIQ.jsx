@@ -55,7 +55,10 @@ function PlanPicker({ selected, onSelect }) {
           </button>);
         })}
       </div>
-      <p style={{ ...S.hint, marginTop: 6 }}>{PLANS.find((p) => p.id === selected)?.desc}</p>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 6 }}>
+        <p style={{ ...S.hint, margin: 0 }}>{PLANS.find((p) => p.id === selected)?.desc}</p>
+        <span style={{ fontSize: 9, color: S.dimmed, whiteSpace: "nowrap" }}>DED. = Deductible</span>
+      </div>
     </div>
   );
 }
@@ -289,6 +292,7 @@ export default function HostIQ() {
 
   return (
     <div style={S.page}>
+      <style>{`html, body, #root { margin: 0; padding: 0; background: #0a0c10; min-height: 100vh; }`}</style>
       <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       <div style={S.wrap}>
         <div style={{ textAlign: "center", marginBottom: 20 }}>
