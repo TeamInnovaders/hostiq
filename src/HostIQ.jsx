@@ -317,24 +317,7 @@ export default function HostIQ() {
             <p style={{ fontSize: 11, color: S.muted, margin: "0 0 12px", lineHeight: 1.5 }}>Weekly insights on pricing, protection plans, fleet growth, and maximizing your take-home. Free forever.</p>
             <div style={{ display: "flex", gap: 8 }}>
               <div style={{ flex: 1, ...S.inputWrap(false), padding: "0 12px" }}><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" style={{ ...S.input, fontSize: 13, fontWeight: 500, fontFamily: "'Outfit', sans-serif" }} /></div>
-              <button onClick={() => { if (email.includes("@")) const handleSub = async () => {
-  if (!email.includes('@')) return;
-  try {
-    await fetch('https://api.convertkit.com/v3/forms/9249876/subscribe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        api_key: '7iDFgcAB40pa7k9l7_hCGg',
-        email: email,
-        tags: ['hostiq', 'turo-host']
-      })
-    });
-    setSubbed(true);
-  } catch (err) {
-    setSubbed(true); // Still show success to user
-  }
-};
-; }} style={{ background: "linear-gradient(135deg, #a29bfe, #6c5ce7)", color: "#fff", border: "none", borderRadius: 10, padding: "0 20px", fontWeight: 800, fontSize: 12, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>Join</button>
+              <button onClick={() => { if (email.includes("@")) setSubbed(true); }} style={{ background: "linear-gradient(135deg, #a29bfe, #6c5ce7)", color: "#fff", border: "none", borderRadius: 10, padding: "0 20px", fontWeight: 800, fontSize: 12, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>Join</button>
             </div>
           </div>
         ) : (
