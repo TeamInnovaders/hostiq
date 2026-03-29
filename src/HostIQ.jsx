@@ -290,14 +290,14 @@ export default function HostIQ() {
   const [email, setEmail] = useState("");
   const [subbed, setSubbed] = useState(false);
 
-  const handleSub = async () => {
+const handleSub = async () => {
     if (!email.includes("@")) return;
     try {
-      const formData = new FormData();
-      formData.append("fields[email]", email);
+      const params = new URLSearchParams();
+      params.append("fields[email]", email);
       await fetch("https://assets.mailerlite.com/jsonp/2225662/forms/183073990997181485/subscribe", {
         method: "POST",
-        body: formData,
+        body: params,
         mode: "no-cors",
       });
       setSubbed(true);
