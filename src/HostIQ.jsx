@@ -289,6 +289,7 @@ export default function HostIQ() {
   const [tab, setTab] = useState("trip");
   const [email, setEmail] = useState("");
   const [subbed, setSubbed] = useState(false);
+
   const handleSub = async () => {
     if (!email.includes("@")) return;
     try {
@@ -332,7 +333,7 @@ export default function HostIQ() {
             <p style={{ fontSize: 11, color: S.muted, margin: "0 0 12px", lineHeight: 1.5 }}>Weekly insights on pricing, protection plans, fleet growth, and maximizing your take-home. Free forever.</p>
             <div style={{ display: "flex", gap: 8 }}>
               <div style={{ flex: 1, ...S.inputWrap(false), padding: "0 12px" }}><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" style={{ ...S.input, fontSize: 13, fontWeight: 500, fontFamily: "'Outfit', sans-serif" }} /></div>
-              <button onClick={handleSub} style={{ background: "linear-gradient(135deg, #a29bfe, #6c5ce7)",, color: "#fff", border: "none", borderRadius: 10, padding: "0 20px", fontWeight: 800, fontSize: 12, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>Join</button>
+              <button onClick={handleSub} style={{ background: "linear-gradient(135deg, #a29bfe, #6c5ce7)", color: "#fff", border: "none", borderRadius: 10, padding: "0 20px", fontWeight: 800, fontSize: 12, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>Join</button>
             </div>
           </div>
         ) : (
